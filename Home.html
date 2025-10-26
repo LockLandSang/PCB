@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Sentinel System - Cleaning the LA River</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-green': '#228B22',
+                        'gold': '#FFD700',
+                        'light-green': '#E5F2E5',
+                        'dark-green': '#1A5D1A'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f9f0;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-bg {
+            background-color: #f8fff8;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(34, 139, 34, 0.15);
+        }
+        
+        .btn-primary {
+            background-color: #228B22;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1A5D1A;
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background-color: #FFD700;
+            color: #228B22;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c200;
+            transform: translateY(-2px);
+        }
+        
+        .link-input {
+            border: 2px solid #228B22;
+            transition: all 0.3s ease;
+        }
+        
+        .link-input:focus {
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+        }
+        
+        .stats-card {
+            border-top: 4px solid #FFD700;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #228B22;
+            border: 3px solid white;
+            z-index: 1;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 28px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background-color: #228B22;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-forest-green flex items-center justify-center mr-3">
+                    <i class="fas fa-water text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-forest-green">PCB Sentinel System</h1>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <a href="#about" class="text-forest-green hover:text-dark-green font-medium">About</a>
+                <a href="#goals" class="text-forest-green hover:text-dark-green font-medium">Goals</a>
+                <a href="#technology" class="text-forest-green hover:text-dark-green font-medium">Technology</a>
+                <a href="#impact" class="text-forest-green hover:text-dark-green font-medium">Impact</a>
+                <a href="#contact" class="text-forest-green hover:text-dark-green font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Cleaning the LA River</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10">Removing harmful PCBs to restore the river's ecosystem and protect our community</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#goals" class="btn-primary px-8 py-3 rounded-full font-bold text-lg">Our Mission</a>
+                <a href="#contact" class="btn-gold px-8 py-3 rounded-full font-bold text-lg">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="stats-card bg-light-green p-6 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-forest-green mb-2">85%</div>
+                    <p class="text-gray-700">Reduction in PCB levels</p>
+                </div>
+                <div class="stats-card bg-light-green p-6 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-forest-green mb-2">12</div>
+                    <p class="text-gray-700">Mile river segment cleaned</p>
+                </div>
+                <div class="stats-card bg-light-green p-6 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-forest-green mb-2">500+</div>
+                    <p class="text-gray-700">Community volunteers</p>
+                </div>
+                <div class="stats-card bg-light-green p-6 rounded-lg text-center">
+                    <div class="text-4xl font-bold text-forest-green mb-2">3</div>
+                    <p class="text-gray-700">Years of operation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">About the PCB Sentinel System</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-forest-green mb-4">Our Mission</h3>
+                    <p class="text-gray-700 mb-6">
+                        The PCB Sentinel System is a pioneering initiative aimed at cleaning the Los Angeles River by removing harmful PCBs (Polychlorinated Biphenyls). Our project combines cutting-edge technology with environmental stewardship to address one of the region's most pressing ecological challenges.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        PCBs are toxic industrial compounds that were widely used in electrical equipment until they were banned in the 1970s. Despite the ban, these persistent pollutants continue to contaminate waterways, posing serious risks to aquatic life and human health.
+                    </p>
+                    <p class="text-gray-700">
+                        Our system deploys advanced filtration and monitoring technologies to detect, capture, and safely dispose of PCBs from the river water, creating a cleaner, safer environment for all.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-water text-forest-green text-5xl mb-4"></i>
+                            <p class="text-forest-green font-bold">PCB Removal Process Visualization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Project Goals & Objectives</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-light-green rounded-xl p-8 shadow-md">
+                    <div class="w-16 h-16 rounded-full bg-forest-green flex items-center justify-center mb-6">
+                        <i class="fas fa-biohazard text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-green mb-4">Eliminate PCB Contamination</h3>
+                    <p class="text-gray-700">
+                        Our primary goal is to eliminate PCB contamination from the LA River, improving water quality and supporting aquatic life. We're committed to reducing PCB levels to safe environmental standards.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-light-green rounded-xl p-8 shadow-md">
+                    <div class="w-16 h-16 rounded-full bg-forest-green flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-green mb-4">Advanced Technology Deployment</h3>
+                    <p class="text-gray-700">
+                        We utilize state-of-the-art sensors and advanced filtration systems to detect and remove PCBs efficiently. Our technology continuously monitors water quality and adapts to changing conditions.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-light-green rounded-xl p-8 shadow-md">
+                    <div class="w-16 h-16 rounded-full bg-forest-green flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-green mb-4">Restore Ecosystem Health</h3>
+                    <p class="text-gray-700">
+                        By reducing PCB levels, we aim to restore the river's ecosystem, enhancing biodiversity and providing a safer environment for recreation. Our long-term vision includes a thriving river ecosystem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-16 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Our Technology</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-cogs text-forest-green text-5xl mb-4"></i>
+                            <p class="text-forest-green font-bold">PCB Detection & Removal System</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-forest-green mb-4">Innovative Solutions</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our PCB Sentinel System employs a multi-stage approach to detect and remove PCBs from the river water:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="mr-4">
+                                <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                                    <span class="text-forest-green font-bold">1</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-forest-green">Advanced Sensors</h4>
+                                <p class="text-gray-700">Real-time monitoring of PCB concentrations using specialized detection equipment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="mr-4">
+                                <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                                    <span class="text-forest-green font-bold">2</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-forest-green">Filtration Units</h4>
+                                <p class="text-gray-700">High-efficiency filters that capture PCB particles from water flow.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="mr-4">
+                                <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                                    <span class="text-forest-green font-bold">3</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-forest-green">Safe Disposal</h4>
+                                <p class="text-gray-700">Proper containment and disposal of captured PCBs according to environmental regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Project Timeline</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-10">
+                    <div class="timeline-item mb-12">
+                        <div class="bg-light-green p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-forest-green mb-2">Project Initiation</h3>
+                            <p class="text-gray-700 mb-2">2020</p>
+                            <p class="text-gray-700">Research and development phase began with environmental scientists and engineers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-12">
+                        <div class="bg-light-green p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-forest-green mb-2">Pilot Program Launch</h3>
+                            <p class="text-gray-700 mb-2">2021</p>
+                            <p class="text-gray-700">Initial deployment of PCB detection systems in a 2-mile river segment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-12">
+                        <div class="bg-light-green p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-forest-green mb-2">Full-Scale Implementation</h3>
+                            <p class="text-gray-700 mb-2">2022</p>
+                            <p class="text-gray-700">Expansion to cover 12 miles of the LA River with advanced filtration systems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="bg-light-green p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-forest-green mb-2">Community Engagement</h3>
+                            <p class="text-gray-700 mb-2">Ongoing</p>
+                            <p class="text-gray-700">Educational programs and volunteer opportunities for local residents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Environmental Impact</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold text-forest-green mb-6">Measurable Results</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">PCB Reduction</span>
+                                <span class="font-bold text-forest-green">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-forest-green h-4 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">Water Quality Improvement</span>
+                                <span class="font-bold text-forest-green">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-forest-green h-4 rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">Aquatic Life Recovery</span>
+                                <span class="font-bold text-forest-green">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-forest-green h-4 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-forest-green mb-6">Community Benefits</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Safer recreational areas along the river</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Improved fishing and boating conditions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Enhanced biodiversity and wildlife habitats</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Educational opportunities for local schools</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Increased property values in surrounding areas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Get Involved</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-6">
+                    We value your input and encourage you to share any additional resources or feedback you may have. 
+                    Please submit up to 5 website links below.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-light-green rounded-xl shadow-lg p-8">
+                <form id="resourceForm">
+                    <div class="mb-6">
+                        <label for="name" class="block text-forest-green font-medium mb-2">Your Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="email" class="block text-forest-green font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block text-forest-green font-medium mb-4">Resource Links</label>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="link1" class="text-gray-700 mb-1 block">Website Link 1</label>
+                                <input type="url" id="link1" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="https://example.com">
+                            </div>
+                            <div>
+                                <label for="link2" class="text-gray-700 mb-1 block">Website Link 2</label>
+                                <input type="url" id="link2" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="https://example.com">
+                            </div>
+                            <div>
+                                <label for="link3" class="text-gray-700 mb-1 block">Website Link 3</label>
+                                <input type="url" id="link3" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="https://example.com">
+                            </div>
+                            <div>
+                                <label for="link4" class="text-gray-700 mb-1 block">Website Link 4</label>
+                                <input type="url" id="link4" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="https://example.com">
+                            </div>
+                            <div>
+                                <label for="link5" class="text-gray-700 mb-1 block">Website Link 5</label>
+                                <input type="url" id="link5" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="https://example.com">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="message" class="block text-forest-green font-medium mb-2">Additional Comments</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg link-input focus:outline-none" placeholder="Share your thoughts or additional information..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full py-4 rounded-lg font-bold text-lg">Submit Resources</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-green text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
+                            <i class="fas fa-water text-forest-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">PCB Sentinel System</h3>
+                    </div>
+                    <p class="text-green-100">
+                        Dedicated to cleaning the LA River and protecting our community's health and environment.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-green-100 hover:text-white">About Us</a></li>
+                        <li><a href="#goals" class="text-green-100 hover:text-white">Our Goals</a></li>
+                        <li><a href="#technology" class="text-green-100 hover:text-white">Technology</a></li>
+                        <li><a href="#impact" class="text-green-100 hover:text-white">Environmental Impact</a></li>
+                        <li><a href="#contact" class="text-green-100 hover:text-white">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-green-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Riverfront Drive, Los Angeles, CA</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@pcbsentinel.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-forest-green hover:bg-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-forest-green hover:bg-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-forest-green hover:bg-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-forest-green hover:bg-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-green-100 mt-6">
+                        Subscribe to our newsletter for project updates
+                    </p>
+                    <div class="flex mt-2">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-gray-800 focus:outline-none">
+                        <button class="bg-gold text-forest-green px-4 py-2 rounded-r-lg font-bold">Join</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-400 mt-10 pt-6 text-center text-green-200">
+                <p>&copy; 2023 PCB Sentinel System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('resourceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Get link values
+            const links = [];
+            for (let i = 1; i <= 5; i++) {
+                const link = document.getElementById(`link${i}`).value;
+                if (link) links.push(link);
+            }
+            
+            // In a real application, you would send this data to a server
+            console.log({
+                name: name,
+                email: email,
+                links: links
+            });
+            
+            // Show success message
+            alert('Thank you for your submission! We will review your resources and get back to you.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
