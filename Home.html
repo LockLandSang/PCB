@@ -21,10 +21,10 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;600&display=swap');
 
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f0f9f0;
             color: #333;
         }
@@ -34,7 +34,7 @@
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(34, 139, 34, 0.75), rgba(34, 139, 34, 0.85)), url('https://images.pexels.com/photos/4264049/pexels-photo-4264049.jpeg?auto=compress&cs=tinysrgb&w=1920');
             background-size: cover;
             background-position: center;
         }
@@ -76,6 +76,7 @@
 
         .stats-card {
             border-top: 4px solid #FFD700;
+            background: linear-gradient(135deg, #E5F2E5 0%, #fff9e6 100%);
         }
 
         .scroll-animate {
@@ -118,13 +119,26 @@
 
         .resource-link {
             transition: all 0.3s ease;
-            border-left: 4px solid #228B22;
+            border-left: 4px solid #FFD700;
         }
 
         .resource-link:hover {
-            background-color: #E5F2E5;
-            border-left-color: #FFD700;
+            background-color: #fff9e6;
+            border-left-color: #228B22;
             transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .gold-accent {
+            color: #FFD700;
+        }
+
+        .gold-bg {
+            background-color: #FFD700;
+        }
+
+        header {
+            border-bottom: 3px solid #FFD700;
         }
     </style>
 </head>
@@ -451,67 +465,67 @@
 
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-4">
-                    <a href="https://www.epa.gov/pcbs" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.waterboards.ca.gov/rwqcb4/water_issues/programs/regional_program/Water_Quality_and_Watersheds/los_angeles_river_watershed/303.shtml" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
                         <div class="flex items-start">
                             <div class="mr-4">
-                                <i class="fas fa-external-link-alt text-forest-green text-2xl"></i>
+                                <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-forest-green mb-2">EPA: Polychlorinated Biphenyls (PCBs)</h3>
-                                <p class="text-gray-700">Learn about what PCBs are, why they're dangerous, and how they affect our environment from the Environmental Protection Agency.</p>
-                                <span class="text-sm text-forest-green font-medium mt-2 inline-block">epa.gov/pcbs</span>
+                                <h3 class="text-xl font-bold text-forest-green mb-2">Los Angeles Regional Water Quality Control Board</h3>
+                                <p class="text-gray-700">Official water quality monitoring, regulations, and cleanup information for the Los Angeles River watershed from the Regional Water Quality Control Board.</p>
+                                <span class="text-sm text-gold font-medium mt-2 inline-block">waterboards.ca.gov</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.lariver.org" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://peer.org/l-a-river-poisoned-by-toxic-pcbs/" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
                         <div class="flex items-start">
                             <div class="mr-4">
-                                <i class="fas fa-external-link-alt text-forest-green text-2xl"></i>
+                                <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-forest-green mb-2">Friends of the LA River</h3>
-                                <p class="text-gray-700">Discover the history of the LA River, current restoration projects, and ways to get involved in protecting this vital waterway.</p>
-                                <span class="text-sm text-forest-green font-medium mt-2 inline-block">lariver.org</span>
+                                <h3 class="text-xl font-bold text-forest-green mb-2">PEER: L.A. River Poisoned by Toxic PCBs</h3>
+                                <p class="text-gray-700">Investigative report on PCB contamination in the LA River and its impact on the community from Public Employees for Environmental Responsibility.</p>
+                                <span class="text-sm text-gold font-medium mt-2 inline-block">peer.org</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.waterboards.ca.gov/losangeles/water_issues/programs/la_river/" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.theguardian.com/us-news/2023/sep/28/nasa-boeing-forever-chemicals-los-angeles" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
                         <div class="flex items-start">
                             <div class="mr-4">
-                                <i class="fas fa-external-link-alt text-forest-green text-2xl"></i>
+                                <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-forest-green mb-2">California Water Boards: LA River Watershed</h3>
-                                <p class="text-gray-700">Official information about water quality monitoring, regulations, and cleanup efforts in the Los Angeles River watershed.</p>
-                                <span class="text-sm text-forest-green font-medium mt-2 inline-block">waterboards.ca.gov</span>
+                                <h3 class="text-xl font-bold text-forest-green mb-2">The Guardian: Forever Chemicals at Former NASA Lab</h3>
+                                <p class="text-gray-700">News investigation about toxic chemical contamination near Los Angeles, including PCBs and other persistent pollutants from industrial sites.</p>
+                                <span class="text-sm text-gold font-medium mt-2 inline-block">theguardian.com</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.atsdr.cdc.gov/toxprofiles/tp17.pdf" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.epa.gov/pcbs/learn-about-polychlorinated-biphenyls" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
                         <div class="flex items-start">
                             <div class="mr-4">
-                                <i class="fas fa-external-link-alt text-forest-green text-2xl"></i>
+                                <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-forest-green mb-2">CDC: Toxicological Profile for PCBs</h3>
-                                <p class="text-gray-700">Detailed scientific information about PCB health effects from the Centers for Disease Control and Prevention.</p>
-                                <span class="text-sm text-forest-green font-medium mt-2 inline-block">atsdr.cdc.gov</span>
+                                <h3 class="text-xl font-bold text-forest-green mb-2">EPA: Learn About Polychlorinated Biphenyls</h3>
+                                <p class="text-gray-700">Comprehensive information about what PCBs are, why they're dangerous, and how they affect our environment from the Environmental Protection Agency.</p>
+                                <span class="text-sm text-gold font-medium mt-2 inline-block">epa.gov</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.ncbi.nlm.nih.gov/books/NBK572165/" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://en.wikipedia.org/wiki/Polychlorinated_biphenyl" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
                         <div class="flex items-start">
                             <div class="mr-4">
-                                <i class="fas fa-external-link-alt text-forest-green text-2xl"></i>
+                                <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-forest-green mb-2">National Library of Medicine: PCB Toxicity</h3>
-                                <p class="text-gray-700">Medical research and information about how PCBs affect human health and the environment.</p>
-                                <span class="text-sm text-forest-green font-medium mt-2 inline-block">ncbi.nlm.nih.gov</span>
+                                <h3 class="text-xl font-bold text-forest-green mb-2">Wikipedia: Polychlorinated Biphenyl</h3>
+                                <p class="text-gray-700">Detailed encyclopedia entry covering the history, uses, health effects, and environmental impact of PCBs with scientific references.</p>
+                                <span class="text-sm text-gold font-medium mt-2 inline-block">wikipedia.org</span>
                             </div>
                         </div>
                     </a>
