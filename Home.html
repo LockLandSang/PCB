@@ -140,6 +140,113 @@
         header {
             border-bottom: 3px solid #FFD700;
         }
+
+        /* Questionnaire Styles */
+        .question-card {
+            background: white;
+            border-left: 4px solid #FFD700;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 8px 20px rgba(34, 139, 34, 0.1);
+            transform: translateX(5px);
+        }
+
+        .radio-option, .checkbox-option {
+            margin: 12px 0;
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #228B22;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option input[type="radio"]:checked,
+        .checkbox-option input[type="checkbox"]:checked {
+            background-color: #228B22;
+            border-color: #228B22;
+            box-shadow: inset 0 0 0 3px white;
+        }
+
+        .radio-option input[type="radio"]:hover,
+        .checkbox-option input[type="checkbox"]:hover {
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .radio-option input[type="radio"] {
+            border-radius: 50%;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            cursor: pointer;
+            display: inline;
+            margin: 0;
+        }
+
+        textarea {
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid #E5F2E5;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #228B22;
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.1);
+        }
+
+        input[type="text"], input[type="email"], select {
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid #E5F2E5;
+            transition: all 0.3s ease;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            outline: none;
+            border-color: #228B22;
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.1);
+        }
+
+        .questionnaire-success {
+            display: none;
+            background: linear-gradient(135deg, #228B22 0%, #1A5D1A 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            animation: slideDown 0.5s ease;
+        }
+
+        .questionnaire-success.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -207,13 +314,13 @@
                 <div class="md:w-1/2 scroll-animate">
                     <h3 class="text-2xl font-bold text-forest-green mb-4">What We Do</h3>
                     <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                        The PCB Sentinel System is a special project that cleans the Los Angeles River by removing dangerous chemicals called PCBs. Think of PCBs like invisible pollution that harms fish, plants, and people who use the river.
+                        The PCB Sentinel System is a special project that cleans the Los Angeles River by removing dangerous chemicals called PCBs. Think of PCBs like invisible pollution that harms fi[...]
                     </p>
                     <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                        PCBs are man-made chemicals that were used in things like electrical equipment and building materials from the 1920s until 1979. Even though they were banned over 40 years ago, these chemicals still stick around in the water and soil. They don't break down easily, which means they keep causing problems for a long time.
+                        PCBs are man-made chemicals that were used in things like electrical equipment and building materials from the 1920s until 1979. Even though they were banned over 40 years ago,[...]
                     </p>
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        Our system uses special filters and sensors to find and catch these harmful chemicals before they can hurt the river's animals and plants. We're working to make the LA River clean and safe for everyone in our community.
+                        Our system uses special filters and sensors to find and catch these harmful chemicals before they can hurt the river's animals and plants. We're working to make the LA River cl[...]
                     </p>
                 </div>
                 <div class="md:w-1/2 scroll-animate">
@@ -256,7 +363,7 @@
                         Our biggest goal is to reduce PCB levels by 85% over the next five years. Right now, the river has too much PCB pollution, which makes it unsafe for fish and people.
                     </p>
                     <p class="text-gray-700 text-base leading-relaxed">
-                        We want to bring PCB levels down to what scientists call "safe environmental standards." This means the water will be clean enough that fish can live healthy lives and people can safely enjoy activities near the river.
+                        We want to bring PCB levels down to what scientists call "safe environmental standards." This means the water will be clean enough that fish can live healthy lives and people c[...]
                     </p>
                 </div>
 
@@ -266,10 +373,10 @@
                     </div>
                     <h3 class="text-xl font-bold text-forest-green mb-4">Use Smart Technology</h3>
                     <p class="text-gray-700 mb-4 text-base leading-relaxed">
-                        We use high-tech sensors and filters that work 24 hours a day, 7 days a week. These sensors can detect even tiny amounts of PCBs in the water, kind of like how a smoke detector can smell smoke before you do.
+                        We use high-tech sensors and filters that work 24 hours a day, 7 days a week. These sensors can detect even tiny amounts of PCBs in the water, kind of like how a smoke detector[...]
                     </p>
                     <p class="text-gray-700 text-base leading-relaxed">
-                        Our filtration system then captures the PCBs and removes them safely. The technology constantly learns and adjusts to work better over time, making sure we catch as many harmful chemicals as possible.
+                        Our filtration system then captures the PCBs and removes them safely. The technology constantly learns and adjusts to work better over time, making sure we catch as many harmfu[...]
                     </p>
                 </div>
 
@@ -282,7 +389,7 @@
                         When PCB levels drop, fish, birds, plants, and other wildlife can return to the river. We want to create a healthy ecosystem where native species can thrive again.
                     </p>
                     <p class="text-gray-700 text-base leading-relaxed">
-                        Our long-term vision is to have a river where families can fish, kayak, and enjoy nature safely. We also want to see more parks and green spaces along the riverbank that everyone can use.
+                        Our long-term vision is to have a river where families can fish, kayak, and enjoy nature safely. We also want to see more parks and green spaces along the riverbank that everyo[...]
                     </p>
                 </div>
             </div>
@@ -296,10 +403,10 @@
                         <div class="md:w-3/4">
                             <h3 class="text-2xl font-bold mb-4">Why This Matters</h3>
                             <p class="text-lg leading-relaxed mb-4">
-                                The LA River flows through 51 miles of Southern California and affects over 10 million people. When the river is polluted with PCBs, it doesn't just hurt the fish - it affects everyone who lives near it.
+                                The LA River flows through 51 miles of Southern California and affects over 10 million people. When the river is polluted with PCBs, it doesn't just hurt the fish - it [...]
                             </p>
                             <p class="text-lg leading-relaxed">
-                                PCBs can cause serious health problems in humans, including cancer and damage to the immune system. By cleaning the river, we're protecting the health of our entire community and making sure future generations have a clean, safe river to enjoy.
+                                PCBs can cause serious health problems in humans, including cancer and damage to the immune system. By cleaning the river, we're protecting the health of our entire com[...]
                             </p>
                         </div>
                     </div>
@@ -348,7 +455,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg text-forest-green mb-2">Detect the Problem</h4>
-                                <p class="text-gray-700 leading-relaxed">Our sensors constantly test the water, measuring PCB levels every few minutes. They can find even very small amounts of pollution that human eyes can't see.</p>
+                                <p class="text-gray-700 leading-relaxed">Our sensors constantly test the water, measuring PCB levels every few minutes. They can find even very small amounts of polluti[...]
                             </div>
                         </div>
 
@@ -360,7 +467,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg text-forest-green mb-2">Filter and Capture</h4>
-                                <p class="text-gray-700 leading-relaxed">Special filters trap PCB particles as water flows through the system. Think of it like a really good coffee filter that only catches the bad stuff and lets clean water pass through.</p>
+                                <p class="text-gray-700 leading-relaxed">Special filters trap PCB particles as water flows through the system. Think of it like a really good coffee filter that only ca[...]
                             </div>
                         </div>
 
@@ -372,7 +479,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg text-forest-green mb-2">Safely Remove</h4>
-                                <p class="text-gray-700 leading-relaxed">We carefully collect the captured PCBs and send them to special facilities that can destroy them safely. This follows strict environmental rules to make sure the pollution doesn't end up somewhere else.</p>
+                                <p class="text-gray-700 leading-relaxed">We carefully collect the captured PCBs and send them to special facilities that can destroy them safely. This follows strict en[...]
                             </div>
                         </div>
                     </div>
@@ -429,11 +536,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold text-2xl mt-1 mr-3"></i>
-                            <span class="text-gray-700 leading-relaxed"><strong>Safer Parks and Recreation:</strong> People can enjoy walking, biking, and playing near the river without worrying about pollution</span>
+                            <span class="text-gray-700 leading-relaxed"><strong>Safer Parks and Recreation:</strong> People can enjoy walking, biking, and playing near the river without worrying about[...]
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold text-2xl mt-1 mr-3"></i>
-                            <span class="text-gray-700 leading-relaxed"><strong>Healthier Fish Population:</strong> Native fish species can return and thrive, which means better fishing opportunities</span>
+                            <span class="text-gray-700 leading-relaxed"><strong>Healthier Fish Population:</strong> Native fish species can return and thrive, which means better fishing opportunities<[...]
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold text-2xl mt-1 mr-3"></i>
@@ -441,7 +548,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold text-2xl mt-1 mr-3"></i>
-                            <span class="text-gray-700 leading-relaxed"><strong>Learning Opportunities:</strong> Students can visit the river for science projects and learn about environmental protection</span>
+                            <span class="text-gray-700 leading-relaxed"><strong>Learning Opportunities:</strong> Students can visit the river for science projects and learn about environmental protect[...]
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-gold text-2xl mt-1 mr-3"></i>
@@ -465,14 +572,14 @@
 
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-4">
-                    <a href="https://www.waterboards.ca.gov/rwqcb4/water_issues/programs/regional_program/Water_Quality_and_Watersheds/los_angeles_river_watershed/303.shtml" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.waterboards.ca.gov/rwqcb4/water_issues/programs/regional_program/Water_Quality_and_Watersheds/los_angeles_river_watershed/303.shtml" target="_blank" rel="noope[...]
                         <div class="flex items-start">
                             <div class="mr-4">
                                 <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-forest-green mb-2">Los Angeles Regional Water Quality Control Board</h3>
-                                <p class="text-gray-700">Official water quality monitoring, regulations, and cleanup information for the Los Angeles River watershed from the Regional Water Quality Control Board.</p>
+                                <p class="text-gray-700">Official water quality monitoring, regulations, and cleanup information for the Los Angeles River watershed from the Regional Water Quality Con[...]
                                 <span class="text-sm text-gold font-medium mt-2 inline-block">waterboards.ca.gov</span>
                             </div>
                         </div>
@@ -485,39 +592,39 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-forest-green mb-2">PEER: L.A. River Poisoned by Toxic PCBs</h3>
-                                <p class="text-gray-700">Investigative report on PCB contamination in the LA River and its impact on the community from Public Employees for Environmental Responsibility.</p>
+                                <p class="text-gray-700">Investigative report on PCB contamination in the LA River and its impact on the community from Public Employees for Environmental Responsibilit[...]
                                 <span class="text-sm text-gold font-medium mt-2 inline-block">peer.org</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.theguardian.com/us-news/2023/sep/28/nasa-boeing-forever-chemicals-los-angeles" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.theguardian.com/us-news/2023/sep/28/nasa-boeing-forever-chemicals-los-angeles" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-[...]
                         <div class="flex items-start">
                             <div class="mr-4">
                                 <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-forest-green mb-2">The Guardian: Forever Chemicals at Former NASA Lab</h3>
-                                <p class="text-gray-700">News investigation about toxic chemical contamination near Los Angeles, including PCBs and other persistent pollutants from industrial sites.</p>
+                                <p class="text-gray-700">News investigation about toxic chemical contamination near Los Angeles, including PCBs and other persistent pollutants from industrial sites.</[...]
                                 <span class="text-sm text-gold font-medium mt-2 inline-block">theguardian.com</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.epa.gov/pcbs/learn-about-polychlorinated-biphenyls" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://www.epa.gov/pcbs/learn-about-polychlorinated-biphenyls" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scro[...]
                         <div class="flex items-start">
                             <div class="mr-4">
                                 <i class="fas fa-external-link-alt text-gold text-2xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-forest-green mb-2">EPA: Learn About Polychlorinated Biphenyls</h3>
-                                <p class="text-gray-700">Comprehensive information about what PCBs are, why they're dangerous, and how they affect our environment from the Environmental Protection Agency.</p>
+                                <p class="text-gray-700">Comprehensive information about what PCBs are, why they're dangerous, and how they affect our environment from the Environmental Protection Age[...]
                                 <span class="text-sm text-gold font-medium mt-2 inline-block">epa.gov</span>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://en.wikipedia.org/wiki/Polychlorinated_biphenyl" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-animate">
+                    <a href="https://en.wikipedia.org/wiki/Polychlorinated_biphenyl" target="_blank" rel="noopener noreferrer" class="resource-link block bg-white p-6 rounded-lg shadow-md scroll-anima[...]
                         <div class="flex items-start">
                             <div class="mr-4">
                                 <i class="fas fa-external-link-alt text-gold text-2xl"></i>
@@ -530,6 +637,183 @@
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="questionnaire" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-forest-green mb-4">Your Thoughts Matter</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-gray-700 max-w-3xl mx-auto mt-6 text-lg">
+                    Help us understand your knowledge and concerns about PCBs and the LA River. Your feedback helps us create better solutions.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div id="successMessage" class="questionnaire-success">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-2xl mr-3"></i>
+                        <div>
+                            <strong>Thank you!</strong> Your responses have been recorded. Together, we're making a difference for the LA River.
+                        </div>
+                    </div>
+                </div>
+
+                <form id="questionnaireForm" class="space-y-8">
+                    <!-- Question 1 -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gold text-forest-green flex items-center justify-center font-bold mr-3">1</span>
+                            Before visiting this site, how much did you know about PCBs?
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="radio-option">
+                                <input type="radio" id="q1_1" name="pcb_knowledge" value="nothing" required>
+                                <label for="q1_1">I had never heard of PCBs before</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q1_2" name="pcb_knowledge" value="little">
+                                <label for="q1_2">I had a little general knowledge</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q1_3" name="pcb_knowledge" value="moderate">
+                                <label for="q1_3">I had moderate knowledge about PCB pollution</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q1_4" name="pcb_knowledge" value="substantial">
+                                <label for="q1_4">I had substantial knowledge already</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gold text-forest-green flex items-center justify-center font-bold mr-3">2</span>
+                            Which concerns about the LA River are most important to you? (Select all that apply)
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q2_1" name="river_concerns" value="wildlife">
+                                <label for="q2_1">Wildlife and ecosystem health</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q2_2" name="river_concerns" value="human_health">
+                                <label for="q2_2">Human health risks</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q2_3" name="river_concerns" value="recreation">
+                                <label for="q2_3">Recreation and community access</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q2_4" name="river_concerns" value="property_values">
+                                <label for="q2_4">Property values and neighborhood development</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q2_5" name="river_concerns" value="air_quality">
+                                <label for="q2_5">Air and water quality</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gold text-forest-green flex items-center justify-center font-bold mr-3">3</span>
+                            How confident are you that technology can solve pollution problems like PCB contamination?
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="radio-option">
+                                <input type="radio" id="q3_1" name="tech_confidence" value="not_confident" required>
+                                <label for="q3_1">Not confident at all</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q3_2" name="tech_confidence" value="somewhat_skeptical">
+                                <label for="q3_2">Somewhat skeptical</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q3_3" name="tech_confidence" value="moderately_confident">
+                                <label for="q3_3">Moderately confident</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="q3_4" name="tech_confidence" value="very_confident">
+                                <label for="q3_4">Very confident</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gold text-forest-green flex items-center justify-center font-bold mr-3">4</span>
+                            What would motivate you to support LA River cleanup efforts? (Select all that apply)
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q4_1" name="motivations" value="volunteering">
+                                <label for="q4_1">Volunteering for cleanup events</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q4_2" name="motivations" value="donations">
+                                <label for="q4_2">Making financial contributions</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q4_3" name="motivations" value="advocacy">
+                                <label for="q4_3">Advocating for stronger environmental policies</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q4_4" name="motivations" value="education">
+                                <label for="q4_4">Educating others about the issue</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="q4_5" name="motivations" value="nothing">
+                                <label for="q4_5">I'm not sure how to help</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-gold text-forest-green flex items-center justify-center font-bold mr-3">5</span>
+                            How has this information changed your perspective on the LA River?
+                        </h3>
+                        <textarea id="q5_response" name="perspective_change" rows="5" placeholder="Share your thoughts here..." class="w-full p-4 rounded-lg border-2 border-light-green focus:border-forest-green focus:outline-none transition"></textarea>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="question-card p-8 rounded-lg shadow-md scroll-animate">
+                        <h3 class="text-xl font-bold text-forest-green mb-6 flex items-center">
+                            <i class="fas fa-user text-gold mr-3"></i>
+                            Contact Information (Optional)
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm">We'd like to keep you updated on our cleanup progress. Leave your details if you'd like to hear from us.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" class="w-full p-3 rounded-lg border-2 border-light-green">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" class="w-full p-3 rounded-lg border-2 border-light-green">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 scroll-animate">
+                        <button type="submit" class="btn-primary px-8 py-3 rounded-full font-bold text-lg flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Submit Responses
+                        </button>
+                        <button type="reset" class="btn-gold px-8 py-3 rounded-full font-bold text-lg flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i>
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -612,6 +896,49 @@
                     });
                 }
             });
+        });
+
+        // Questionnaire Form Handler
+        const questionnaireForm = document.getElementById('questionnaireForm');
+        const successMessage = document.getElementById('successMessage');
+
+        questionnaireForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(questionnaireForm);
+            const data = {
+                pcb_knowledge: formData.get('pcb_knowledge'),
+                river_concerns: formData.getAll('river_concerns'),
+                tech_confidence: formData.get('tech_confidence'),
+                motivations: formData.getAll('motivations'),
+                perspective_change: formData.get('perspective_change'),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Log to console (in production, this would send to a server)
+            console.log('Questionnaire Response:', data);
+
+            // Store in localStorage
+            const responses = JSON.parse(localStorage.getItem('pcbResponses') || '[]');
+            responses.push(data);
+            localStorage.setItem('pcbResponses', JSON.stringify(responses));
+
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Reset form
+            questionnaireForm.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
         });
     </script>
 </body>
